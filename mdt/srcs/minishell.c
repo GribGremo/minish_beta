@@ -49,7 +49,8 @@ int display_prompt(t_data *data)
             create_lst_char(data);
             check_quote(data); 
             token_char(data);
-            print_lst_char(data, 'r');
+//            print_lst_char(data, 's');
+			print_lst_word(data);
 			if (ft_strcmp(entry,"exit") == 0)
 			{
 				free(entry);

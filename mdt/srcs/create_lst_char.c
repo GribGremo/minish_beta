@@ -74,4 +74,3 @@ int token_char(t_data *data)
     }
     return (0);
 }
-// int create_lst_word(t_data *data)

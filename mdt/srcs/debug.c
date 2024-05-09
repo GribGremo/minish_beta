@@ -79,3 +79,21 @@ int print_lst_char(t_data *data, char c)
     return (0);
 }
 //JE SUIS UNE "'$QUOTE'" '"$QUOTE"' | < > $ "|" "<" ">" "$" '|' '<' '>' '$'
+
+int print_lst_word(t_data *data)
+{
+    t_word *node;
+
+    node = data->lst_word;
+    while(node != NULL)
+    {
+        printf("__________NODE__________\n");
+        printf("NODE= %p\n", node);
+        printf("INDEX= %d\n",node->n);
+        printf("WORD= %s\n",node->word);
+        printf("NEXT= %p\n", node->next);
+        printf("PREVIOUS= %p\n", node->previous);
+        node = node->next;
+    }
+    return (0);
+}
