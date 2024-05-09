@@ -32,6 +32,7 @@ int    init_data(char **envp, t_data *data)
 	data->entry = NULL;
 	data->env = NULL;
 	data->lst_char = NULL;
+	data->lst_word = NULL;
 	return (0);
 }
 
@@ -49,6 +50,7 @@ int display_prompt(t_data *data)
             create_lst_char(data);
             check_quote(data); 
             token_char(data);
+			create_lst_word(data);
 //            print_lst_char(data, 's');
 			print_lst_word(data);
 			if (ft_strcmp(entry,"exit") == 0)

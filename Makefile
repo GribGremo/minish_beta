@@ -6,7 +6,7 @@
 #    By: grib <grib@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:39:02 by sylabbe           #+#    #+#              #
-#    Updated: 2024/05/08 21:17:26 by grib             ###   ########.fr        #
+#    Updated: 2024/05/09 19:40:18 by grib             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ DEST_MDT_DIR = mdt/obj
 # Ajouter le chemin au début de chaque fichier source
 SRC =	$(addprefix $(SRC_MDT_DIR)/, minishell.c \
 										lst_char.c \
+										lst_word.c \
 										create_lst_char.c \
+										create_lst_word.c \
 										debug.c)
 
 
