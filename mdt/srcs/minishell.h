@@ -100,6 +100,12 @@ void	ft_lstadd_back_word(t_word **lst, t_word *new);
 t_word	*ft_lstlast_word(t_word *lst);
 int	ft_lstsize_word(t_word *lst);
 
+//LST ENV
+t_env	*ft_lstnew_env(t_alloc **lst_alloc);
+void	ft_lstadd_back_env(t_env **lst, t_env *new);
+t_env	*ft_lstlast_env(t_env *lst);
+int	ft_lstsize_env(t_env *lst);
+
 //CREATE LST CHAR
 int create_lst_char(t_data *data);
 int check_quote(t_data *data);
@@ -110,8 +116,24 @@ int	create_lst_word(t_data *data);
 char	*create_word(t_data *data, t_char **node_c, t_char_tok tok);
 int	ft_lstlen_char(t_data *data, t_char *node_c, t_char_tok tok);
 
+//EXPAND
+int expand(t_data *data);
+t_char *replace(t_data *data, t_char *node);
+t_char *find_end_var(t_data *data, t_char *node);
+int delete_var_name(t_data *data, t_char *start, t_char *end);
+char *create_var_str(t_data *data, t_char *start, t_char *end);
+t_char *create_var_list(t_data *data, char *str);
 
+//ENV
+void	alpha_order(t_env *env);
+int get_env(t_data *data, char **envp);
+int	add_env_node(t_data *data);
+int	found_char(const char *string, char *searchedChar);
+t_env *get_env_var(t_data *data, char *str);
+
+int exit_error(t_data *data, char *str);
 
 //DEBUG
 int print_lst_char(t_data *data, char c);
 int print_lst_word(t_data *data);
+void	print_env_debug(t_data *data);

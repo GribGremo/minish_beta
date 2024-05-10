@@ -83,9 +83,9 @@ int	ft_lstsize_char(t_char *lst)
 	return (i);
 }
 
-int exit_error(t_data *data, char *str)
-{
-	(void)str;
-    (void) data;//A VOIR
-    return (0);
-}
+// int exit_error(t_data *data, char *str)
+// {
+// 	(void)str;
+//     (void) data;//A VOIR
+//     return (0);
+// }

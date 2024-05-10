@@ -50,8 +50,9 @@ int display_prompt(t_data *data)
             create_lst_char(data);
             check_quote(data); 
             token_char(data);
+			expand(data);
 			create_lst_word(data);
-//            print_lst_char(data, 's');
+            print_lst_char(data, 'r');
 			print_lst_word(data);
 			if (ft_strcmp(entry,"exit") == 0)
 			{
@@ -72,6 +73,8 @@ int main(int ac, char **av, char **envp)
 	t_data  data;
 
 	init_data(envp, &data);
+	get_env(&data, envp);
+	print_env_debug(&data);
 	display_prompt(&data);
 	(void) av;
 	(void) ac;

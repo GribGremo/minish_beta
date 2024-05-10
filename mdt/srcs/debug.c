@@ -97,3 +97,16 @@ int print_lst_word(t_data *data)
     }
     return (0);
 }
+
+void	print_env_debug(t_data *data)
+{
+    t_env *node;
+    node = data->env;
+	while(node != NULL)
+    {
+        printf("Var = %s\n",node->var);
+        printf("Value = %s\n",node->value);
+        printf("Origin = %d\n",node->origin);
+        node = node->next;
+    }
+}

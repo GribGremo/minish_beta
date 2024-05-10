@@ -50,6 +50,7 @@ int	ft_lstlen_char(t_data *data, t_char *node_c, t_char_tok tok)
 {
 	t_char *temp;
 	int count;
+	count = 0;
 	(void) data;
 
 	temp = node_c;
