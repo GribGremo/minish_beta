@@ -16,6 +16,7 @@ int create_lst_char(t_data *data)
         temp = node;
         node->c = data->entry[i];
         node->n = i;
+        node->tok_c = -1;//
         i++;
     }
     return (0);

@@ -61,6 +61,7 @@ int display_prompt(t_data *data)
 		}
 		free(entry);
 		data->lst_char = NULL;// ! TEMP : IL FAUDRA FREE POTENTIELLEMENT
+		data->lst_word = NULL;
 	}
 	rm_lst_alloc(*data->lst_alloc,"LST_ALLOC CLEARED: END OF PROMPT");
 	return (0);

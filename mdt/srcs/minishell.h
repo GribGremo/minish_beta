@@ -107,7 +107,7 @@ int token_char(t_data *data);
 
 //CREATE LST WORD
 int	create_lst_word(t_data *data);
-char	*create_word(t_data *data, t_char *node_c, t_char_tok tok);
+char	*create_word(t_data *data, t_char **node_c, t_char_tok tok);
 int	ft_lstlen_char(t_data *data, t_char *node_c, t_char_tok tok);
 
 
