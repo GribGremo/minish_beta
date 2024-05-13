@@ -10,7 +10,8 @@ int expand(t_data *data)
     {
         if (node->tok_c == DOLLAR)
         {
-            node = replace(data, node);
+            if (node->next != NULL && node->next->tok_c == CHAR)
+                node = replace(data, node);
         }
         if (node != NULL && node->tok_c != DOLLAR)
             node = node->next;
@@ -61,7 +62,7 @@ t_char *find_end_var(t_data *data, t_char *node)
         temp = temp->next;
     else if (temp->tok_c != S_QUOTE && temp->tok_c != D_QUOTE)
         return(temp->next); //Quel caractere stop expand?
-    else if (temp->tok_c == S_QUOTE && temp->tok_c == D_QUOTE)
+    else if (temp->tok_c == S_QUOTE || temp->tok_c == D_QUOTE)
         return (temp);
     while(temp != NULL && (ft_isalnum(temp->c) || temp->c == '_'))
         temp = temp->next;

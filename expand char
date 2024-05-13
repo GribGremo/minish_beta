@@ -1,0 +1,36 @@
+EXPAND
+! = '0' (Dernier identifiant processus qui a ete lance en arriere plan) RETURN ''
+" = '' (une seul ouvre heredoc, 2 ne renvoie rien)                      RETURN '' 
+# = '0' (nombre d'arguments passés à un script ou à une fonction)       RETURN ''
+$ = '5371' (identifiant processus de la session Bash actuelle)          RETURN ''
+% = '$%' (pas de fonctionnalite assigne)                                RETURN '$%' ou ''
+& = 'Heredoc puis [1]+  Done        echo $' (Resultat incomprehensible) RETURN ''
+' = '' (une seul ouvre heredoc, 2 ne renvoie rien)                      RETURN ''
+( = '' (une seul ouvre heredoc, ouvrante/fermante ne renvoie rien)      RETURN ''
+) = ''                            ''
+* = '' (Dans un script, %* = arguments passes, dans l'invite rien)      RETURN ''
++ = '$+' (pas de fonctionnalite assigne)                                RETURN '$+' ou ''
+, = '$,' (pas de fonctionnalite assigne)                                RETURN '$,' ou ''
+- = 'himBHs' (affiche les options du Shell en cours actives ou non)     RETURN ''
+. = '$.' (pas de fonctionnalite assigne)                                RETURN '$.' ou ''
+/ = '$/' (pas de fonctionnalite assigne)                                RETURN '$/' ou ''
+NUM 0-9
+: = '$:' (pas de fonctionnalite assigne)                                RETURN '$:' ou ''
+; = '$' (pas de fonctionnalite assigne, ';' stop la commande)           RETURN '$' ou '$;' ou ''
+< = 'bash: syntax error near unexpected token `newline'' (normal)       RETURN ''
+= = '$=' (pas de fonctionnalite assigne)                                RETURN '$=' ou ''
+> = 'bash: syntax error near unexpected token `newline'' (normal)       RETURN ''
+? = '0' (retourne le code de sortie de la dernier commande executee)    RETURN 'CODE EXIT'
+@ = '' (représente tous les arguments passés à un script ou cmd)        RETURN ''
+APHA A-Z
+[
+\
+]
+^
+_
+`
+ALPHA a-z
+{
+|
+}
+~
