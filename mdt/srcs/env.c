@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sylabbe <sylabbe@student.42.fr>            +#+  +:+       +#+        */
+/*   By: grib <grib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 12:27:21 by sylabbe           #+#    #+#             */
-/*   Updated: 2024/05/10 15:47:33 by sylabbe          ###   ########.fr       */
+/*   Updated: 2024/05/12 19:00:00 by grib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,21 @@ void	alpha_order(t_env *env)
 			tmp = tmp->next;
 	}
 }
+int add_qmark_env(t_data *data)
+{
+	t_env *node;
+	
+	add_env_node(data);
+	node = ft_lstlast_env(data->env);
+	node->var = malloc(2 * sizeof(char));//
+	node->var[0] = '?';
+	node->var[1] = '\0';
+	node->value = malloc(2 * sizeof(char));//
+	node->value[0]= '0';
+	node->value[1]= '\0';
+	node->origin = -1;
+	return (0);
+}
 
 int get_env(t_data *data, char **envp)
 {
@@ -63,6 +78,7 @@ int get_env(t_data *data, char **envp)
 		node->origin = 1;
 		i++;
 	}
+	add_qmark_env(data);
 	return (0);
 }
 

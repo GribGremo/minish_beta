@@ -12,12 +12,12 @@
 #define RESET   "\033[0m"
 
 
-int print_lst_char(t_data *data, char c)
+int print_lst_char(t_char *lst, char c)
 {
     t_char *node;
     char *color;
 
-    node = data->lst_char;
+    node = lst;
     while(node != NULL && c == 's')
     {
 
@@ -49,7 +49,7 @@ int print_lst_char(t_data *data, char c)
         printf("PREVIOUS= %p\n%s",node->previous, RESET);
         node = node->next;
     }
-    node = data->lst_char;
+    node = lst;
     printf("___________RESUME___________\n");
     while(node != NULL && c == 'r')
     {

@@ -134,6 +134,6 @@ t_env *get_env_var(t_data *data, char *str);
 int exit_error(t_data *data, char *str);
 
 //DEBUG
-int print_lst_char(t_data *data, char c);
+int print_lst_char(t_char *lst, char c);
 int print_lst_word(t_data *data);
 void	print_env_debug(t_data *data);

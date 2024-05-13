@@ -52,8 +52,8 @@ int display_prompt(t_data *data)
             token_char(data);
 			expand(data);
 			create_lst_word(data);
-            print_lst_char(data, 'r');
-			print_lst_word(data);
+            print_lst_char(data->lst_char, 'r');
+//			print_lst_word(data);
 			if (ft_strcmp(entry,"exit") == 0)
 			{
 				free(entry);
